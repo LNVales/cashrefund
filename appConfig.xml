@@ -1,5 +1,4 @@
 <appDefinition>
-   <appId>002</appId>
    <id>002</id>
    <version></version>
    <name>Credit note for Cash Customers</name>
@@ -12,7 +11,7 @@
       <pluginDefaultProperties>
          <id>org.joget.apps.app.lib.EmailTool</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <pluginName>Email Tool</pluginName>
          <pluginDescription>Sends email message to targeted recipient(s)</pluginDescription>
          <pluginProperties>{&quot;host&quot;:&quot;mail1.lcb1.com&quot;,&quot;port&quot;:&quot;25&quot;,&quot;security&quot;:&quot;&quot;,&quot;username&quot;:&quot;autorep&quot;,&quot;password&quot;:&quot;%%%%OSs18KdElhomtov8phfDjwsJcxHpFEGg%%%%&quot;,&quot;from&quot;:&quot;Cash Refund Request &lt;info_joget@lcb1.com&gt;&quot;,&quot;toSpecific&quot;:&quot;&quot;,&quot;toParticipantId&quot;:&quot;&quot;,&quot;cc&quot;:&quot;&quot;,&quot;bcc&quot;:&quot;&quot;,&quot;subject&quot;:&quot;&quot;,&quot;message&quot;:&quot;&quot;,&quot;isHtml&quot;:&quot;&quot;,&quot;formDefId&quot;:&quot;&quot;,&quot;fields&quot;:[],&quot;files&quot;:[]}</pluginProperties>
@@ -22,65 +21,65 @@
       <environmentVariable>
          <id>AppName</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <value>Cash Refund Request</value>
       </environmentVariable>
       <environmentVariable>
          <id>counter</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <value>54</value>
          <remarks>Used for plugin: Id Generator Field</remarks>
       </environmentVariable>
       <environmentVariable>
          <id>counterA0</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <value>92</value>
          <remarks>Used for plugin: Id Generator Field</remarks>
       </environmentVariable>
       <environmentVariable>
          <id>RequestNo</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <value>146</value>
          <remarks>Used for plugin: Id Generator Field</remarks>
       </environmentVariable>
       <environmentVariable>
          <id>RequestNoA0</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <value>00</value>
          <remarks>Used for plugin: Id Generator Field</remarks>
       </environmentVariable>
       <environmentVariable>
          <id>smtp_from</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <value></value>
       </environmentVariable>
       <environmentVariable>
          <id>smtp_host</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <value></value>
       </environmentVariable>
       <environmentVariable>
          <id>smtp_password</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <value></value>
       </environmentVariable>
       <environmentVariable>
          <id>smtp_port</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <value></value>
       </environmentVariable>
       <environmentVariable>
          <id>smtp_username</id>
          <appId>002</appId>
-         <appVersion>6</appVersion>
+         <appVersion>1</appVersion>
          <value></value>
       </environmentVariable>
    </environmentVariableList>
