@@ -1,0 +1,811 @@
+{
+    "className": "org.joget.apps.form.model.Form",
+    "elements": [
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.plugin.enterprise.MultiSelectBox",
+                        "properties": {
+                            "controlField": "",
+                            "id": "taxId",
+                            "label": "Tax ID",
+                            "multiple": "",
+                            "options": [],
+                            "optionsBinder": {
+                                "className": "org.joget.apps.form.lib.FormOptionsBinder",
+                                "properties": {
+                                    "addEmptyOption": "",
+                                    "emptyLabel": "",
+                                    "extraCondition": "",
+                                    "formDefId": "uploadCustomer",
+                                    "groupingColumn": "",
+                                    "idColumn": "id",
+                                    "labelColumn": "taxId",
+                                    "useAjax": ""
+                                }
+                            },
+                            "readonly": "true",
+                            "readonlyLabel": "true",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "width": "40%",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "consigneeName",
+                            "label": "Consignee Name",
+                            "maxlength": "",
+                            "readonly": "true",
+                            "readonlyLabel": "true",
+                            "size": "40",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "mandatory": "",
+                                    "message": "",
+                                    "type": ""
+                                }
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextArea",
+                        "properties": {
+                            "cols": "20",
+                            "id": "address",
+                            "label": "Address",
+                            "readonly": "true",
+                            "readonlyLabel": "true",
+                            "rows": "5",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.IdGeneratorField",
+                        "properties": {
+                            "envVariable": "counter",
+                            "format": "Cash Refund-2016-???",
+                            "hidden": "",
+                            "id": "field5",
+                            "label": "Request No.",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.DatePicker",
+                        "properties": {
+                            "allowManual": "true",
+                            "currentDateAs": "",
+                            "dataFormat": "",
+                            "endDateFieldId": "",
+                            "format": "",
+                            "id": "field3",
+                            "label": "Request Date",
+                            "readonly": "true",
+                            "readonlyLabel": "true",
+                            "startDateFieldId": "",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "mandatory": "",
+                                    "message": "",
+                                    "type": ""
+                                }
+                            },
+                            "value": "#date.dd/MM/yyyy HH:mm#",
+                            "workflowVariable": "",
+                            "yearRange": "c-10:c+10"
+                        }
+                    }
+                ],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "section6",
+                "label": "Customer Cash Refund",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "field20",
+                            "label": "Company",
+                            "maxlength": "",
+                            "readonly": "true",
+                            "readonlyLabel": "true",
+                            "size": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "reason",
+                            "label": "Reason",
+                            "maxlength": "",
+                            "readonly": "true",
+                            "readonlyLabel": "true",
+                            "size": "20",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": "reason"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "handlingChargeDescription",
+                            "label": "Handling Charge Description",
+                            "maxlength": "",
+                            "readonly": "true",
+                            "readonlyLabel": "true",
+                            "size": "20",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "paymentMethod",
+                            "label": "Payment Method",
+                            "maxlength": "",
+                            "readonly": "true",
+                            "readonlyLabel": "true",
+                            "size": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    }
+                ],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "section6_1",
+                "label": "Refund Detail",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.plugin.enterprise.AdvancedGrid",
+                        "properties": {
+                            "deleteMessage": "Delete row?",
+                            "disabledAdd": "true",
+                            "disabledDelete": "true",
+                            "errorMessage": "Invalid number of rows",
+                            "formDefId": "customerSection",
+                            "hint": "Click to edit. Enter to save.",
+                            "id": "requestRefundDetails",
+                            "keyToSave": "13",
+                            "label": "",
+                            "loadBinder": {
+                                "className": "org.joget.plugin.enterprise.MultirowFormBinder",
+                                "properties": {
+                                    "foreignKey": "parent_id",
+                                    "formDefId": "customerSection"
+                                }
+                            },
+                            "options": [
+                                {
+                                    "formatType": "",
+                                    "label": "Receipt/Tax Invoice",
+                                    "value": "ReceiptTaxInvoice",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Invoice No.",
+                                    "value": "InvoiceNo",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Container No.",
+                                    "value": "containerNo",
+                                    "width": "90"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Container Size",
+                                    "value": "containerSize",
+                                    "width": "30"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Receipt Amount (Excl. VAT)",
+                                    "value": "receiptAmountExcludingVat",
+                                    "width": "50"
+                                },
+                                {
+                                    "formatType": "float",
+                                    "label": "Deduct Withholding Tax",
+                                    "value": "deductWithholdingTax",
+                                    "width": "70"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Deduct Withholding Tax Amount",
+                                    "value": "deductWithholdingTaxAmount",
+                                    "width": "50"
+                                },
+                                {
+                                    "formatType": "float",
+                                    "label": "Total Payment",
+                                    "value": "totalPayment",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Credit Note No.",
+                                    "value": "creditNoteNo_2",
+                                    "width": "80"
+                                }
+                            ],
+                            "pagingOptions": "10,20,50,100",
+                            "readonly": "",
+                            "recordPerPage": "20",
+                            "search": "",
+                            "showRowNumber": "true",
+                            "sortIndx": "",
+                            "storeBinder": {
+                                "className": "org.joget.plugin.enterprise.MultirowFormBinder",
+                                "properties": {
+                                    "foreignKey": "parent_id",
+                                    "formDefId": "customerSection"
+                                }
+                            },
+                            "uniqueKey": "",
+                            "validateMaxRow": "",
+                            "validateMinRow": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            }
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.FileUpload",
+                        "properties": {
+                            "attachment": "",
+                            "fileType": ".pdf;.doc;.jpg;.msg;.xlsx;.docx;.png",
+                            "fileTypeMsg": "Invalid file type",
+                            "id": "creditNote",
+                            "label": "Credit Note and Invoice",
+                            "maxSize": "",
+                            "maxSizeMsg": "File size limit exceeded",
+                            "multiple": "",
+                            "permissionType": "",
+                            "readonly": "",
+                            "size": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            }
+                        }
+                    },
+                    {
+                        "className": "org.joget.plugin.enterprise.CalculationField",
+                        "properties": {
+                            "equation": "",
+                            "hidden": "",
+                            "id": "total_1_1",
+                            "label": "Total Refund Amount",
+                            "numOfDecimal": "2",
+                            "postfix": "",
+                            "prefix": "",
+                            "readonlyLabel": "",
+                            "style": "us",
+                            "useThousandSeparator": "true",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "variables": [{
+                                "fieldId": "requestRefundDetails.totalPayment",
+                                "operation": "sum",
+                                "variableName": ""
+                            }],
+                            "workflowVariable": ""
+                        }
+                    }
+                ],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "requestRefundDetails_1",
+                "label": "Container Details",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "true",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "reason",
+                "visibilityValue": "Cancel Booking|Discount|Double Paid|Credit"
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.FileUpload",
+                        "properties": {
+                            "attachment": "",
+                            "fileType": "",
+                            "fileTypeMsg": "Invalid file type",
+                            "id": "attachmentFromConsignee",
+                            "label": "Attachment (From Customer)",
+                            "maxSize": "",
+                            "maxSizeMsg": "File size limit exceeded",
+                            "multiple": "",
+                            "permissionType": "",
+                            "readonly": "true",
+                            "size": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            }
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.CheckBox",
+                        "properties": {
+                            "controlField": "",
+                            "id": "documentChecking",
+                            "label": "Documents",
+                            "options": [
+                                {
+                                    "grouping": "",
+                                    "label": "Receipt/Tax Invoice",
+                                    "value": "Receipt/Tax Invoice"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "Refund Letter from Consignee",
+                                    "value": "Refund Letter from Consignee"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "Recipient ID Card",
+                                    "value": "Recipient ID Card"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "Copy of Withholding Tax (if any)",
+                                    "value": "Copy of Withholding Tax (if any)"
+                                }
+                            ],
+                            "optionsBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "readonly": "true",
+                            "readonlyLabel": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.FileUpload",
+                        "properties": {
+                            "attachment": "",
+                            "fileType": ".pdf;.doc;.jpg;.msg;.xlsx;.docx;.png",
+                            "fileTypeMsg": "Invalid file type",
+                            "id": "ctcsAttachment",
+                            "label": "CTCS Attachment",
+                            "maxSize": "",
+                            "maxSizeMsg": "File size limit exceeded",
+                            "multiple": "",
+                            "permissionType": "",
+                            "readonly": "true",
+                            "size": "",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "mandatory": "",
+                                    "message": "",
+                                    "type": ""
+                                }
+                            }
+                        }
+                    }
+                ],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "Attachment",
+                "label": "Attachment",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.SelectBox",
+                        "properties": {
+                            "controlField": "",
+                            "id": "Status",
+                            "label": "Approve Status",
+                            "multiple": "",
+                            "options": [
+                                {
+                                    "grouping": "",
+                                    "label": "Select",
+                                    "value": ""
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "Approved by Credit Note Executor",
+                                    "value": "Approved by Credit Note Executor"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "Clarification Required by Credit Note Executor",
+                                    "value": "Clarification Required by Credit Note Executor"
+                                }
+                            ],
+                            "optionsBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "mandatory": "true",
+                                    "message": "",
+                                    "type": ""
+                                }
+                            },
+                            "value": "",
+                            "workflowVariable": "status"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextArea",
+                        "properties": {
+                            "cols": "60",
+                            "id": "Remark3",
+                            "label": "Remark",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "rows": "3",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "mandatory": "true",
+                                    "message": "",
+                                    "type": ""
+                                }
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    }
+                ],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "ActionExecutorapproval",
+                "label": "#envVariable.AppName# Credit Note Executor Approval",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.plugin.enterprise.FormGrid",
+                        "properties": {
+                            "deleteMessage": "Delete row?",
+                            "disabledAdd": "true",
+                            "disabledDelete": "true",
+                            "enableSorting": "",
+                            "errorMessage": "Invalid number of rows",
+                            "formDefId": "statusLog",
+                            "height": "500",
+                            "id": "fgLog",
+                            "label": "",
+                            "loadBinder": {
+                                "className": "org.joget.plugin.enterprise.MultirowFormBinder",
+                                "properties": {
+                                    "foreignKey": "ParentId",
+                                    "formDefId": "statusLog"
+                                }
+                            },
+                            "options": [
+                                {
+                                    "format": "",
+                                    "formatType": "text",
+                                    "label": "Date",
+                                    "value": "LogDate",
+                                    "width": ""
+                                },
+                                {
+                                    "format": "",
+                                    "formatType": "text",
+                                    "label": "Username",
+                                    "value": "LogUsername",
+                                    "width": ""
+                                },
+                                {
+                                    "format": "",
+                                    "formatType": "text",
+                                    "label": "Status",
+                                    "value": "LogStatus",
+                                    "width": ""
+                                },
+                                {
+                                    "format": "",
+                                    "formatType": "text",
+                                    "label": "Remarks",
+                                    "value": "LogRemark",
+                                    "width": ""
+                                }
+                            ],
+                            "readonly": "true",
+                            "readonlyLabel": "",
+                            "showRowNumber": "true",
+                            "sortField": "sort",
+                            "storeBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "submit-label-normal": "",
+                            "submit-label-readonly": "",
+                            "uniqueKey": "",
+                            "validateMaxRow": "",
+                            "validateMinRow": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "width": "900"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.SubForm",
+                        "properties": {
+                            "formDefId": "statusLog",
+                            "id": "sfLog",
+                            "label": "",
+                            "loadBinder": {
+                                "className": "org.joget.apps.form.lib.BeanShellFormBinder",
+                                "properties": {
+                                    "script": "return null;",
+                                    "useAjax": ""
+                                }
+                            },
+                            "noframe": "true",
+                            "parentSubFormId": "LastLogId",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "storeBinder": {
+                                "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                                "properties": {}
+                            },
+                            "subFormParentId": "ParentId"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.CustomHTML",
+                        "properties": {
+                            "autoPopulate": "",
+                            "id": "field7",
+                            "label": "",
+                            "value": "<script>\r\n$(document).ready( function(){\r\n\t$('#assignmentComplete,#submit').click(function() {\r\n\t\t$('[name$=LogRemark]').val($('[name$=Remark3]').val());\r\n\t\t$('[name$=LogStatus]').val($('[name$=Status]').val());\r\n\t});\r\n});\r\n<\/script>"
+                        }
+                    }
+                ],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "section3",
+                "label": "#envVariable.AppName# History",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.CustomHTML",
+                    "properties": {
+                        "autoPopulate": "",
+                        "id": "Colour",
+                        "label": "",
+                        "value": "<style>\n#totalNetRefundAmount{\n\tbackground-color: #F2F5A9;\n    font-size: 15px;\n}\n<\/style>\n\n<style>\n#total_1_1{\n\tbackground-color: #F2F5A9;\n    font-size: 15px;\n}\n<\/style>"
+                    }
+                }],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "section12",
+                "label": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "org.joget.plugin.enterprise.AdminUserviewPermission",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        }
+    ],
+    "properties": {
+        "description": "",
+        "id": "actionExecutor",
+        "loadBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "name": "3.0 Credit Note Executor",
+        "noPermissionMessage": "",
+        "permission": {
+            "className": "",
+            "properties": {}
+        },
+        "postProcessor": {
+            "className": "",
+            "properties": {}
+        },
+        "postProcessorRunOn": "both",
+        "storeBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "tableName": "CashRefund"
+    }
+}

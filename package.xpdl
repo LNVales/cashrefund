@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Package xmlns="http://www.wfmc.org/2002/XPDL1.0" xmlns:xpdl="http://www.wfmc.org/2002/XPDL1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="002" Name="Credit note for Cash Customers" xsi:schemaLocation="http://www.wfmc.org/2002/XPDL1.0 http://wfmc.org/standards/docs/TC-1025_schema_10_xpdl.xsd">
+    <PackageHeader>
+        <XPDLVersion>1.0</XPDLVersion>
+        <Vendor/>
+        <Created/>
+    </PackageHeader>
+    <Script Type="text/javascript"/>
+    <Participants>
+        <Participant Id="001_assp_applicant" Name="Applicant">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="001_assp_applicant_hod" Name="Applicant's HOD">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="001_assp_assignee" Name="Assignee">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="001_Requestor" Name="Requestor">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="crmManager" Name="CRM Manager">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="actionExecutor" Name="Credit Note Executor">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="ACTapprover" Name="FA Approver">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="CEO_DCEOApproval" Name="CEO/DCEO Approval">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="crmVerification" Name="CRM Verification">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="participant10" Name="Participant 10">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="overPaymentExecutor" Name="Over Payment Executor">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+    </Participants>
+    <Applications>
+        <Application Id="default_application"/>
+    </Applications>
+    <WorkflowProcesses>
+        <WorkflowProcess Id="001_approver_process" Name="Cash Refund Form Approval Process">
+            <ProcessHeader DurationUnit="h"/>
+            <DataFields>
+                <DataField Id="status" IsArray="FALSE">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                </DataField>
+                <DataField Id="reason" IsArray="FALSE">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                </DataField>
+            </DataFields>
+            <Activities>
+                <Activity Id="CRMApproval" Name="CRM Manager Approval">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>crmManager</Performer>
+                    <Deadline Execution="SYNCHR">
+                        <DeadlineCondition>var D=new java.util.Date(); D.setTime(ACTIVITY_ACTIVATED_TIME.getTime()+(2*86400000)); D;</DeadlineCondition>
+                        <ExceptionName>skip</ExceptionName>
+                    </Deadline>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="AND">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition35"/>
+                                    <TransitionRef Id="transition30"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="crmManager"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="157.8409194946289,62.343725212890604"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="execute" Name="Credit Note Execute">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>actionExecutor</Performer>
+                    <Deadline Execution="SYNCHR">
+                        <DeadlineCondition>var D=new java.util.Date(); D.setTime(ACTIVITY_ACTIVATED_TIME.getTime()+(2*86400000)); D;</DeadlineCondition>
+                        <ExceptionName>skip</ExceptionName>
+                    </Deadline>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="AND">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition13"/>
+                                    <TransitionRef Id="transition40"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="actionExecutor"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="618.963020324707,186.12212848242189"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route2" Name="2">
+                    <Route/>
+                    <Performer>crmManager</Performer>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition49"/>
+                                    <TransitionRef Id="transition62"/>
+                                    <TransitionRef Id="transition26"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="crmManager"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="843.948860168457,92.84090900000001"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route3" Name="3">
+                    <Route/>
+                    <Performer>actionExecutor</Performer>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition50"/>
+                                    <TransitionRef Id="transition29"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="actionExecutor"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="874.9431838989258,146.6051149326172"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route4" Name="4">
+                    <Route/>
+                    <Performer>ACTapprover</Performer>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition56"/>
+                                    <TransitionRef Id="transition44"/>
+                                    <TransitionRef Id="transition59"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="ACTapprover"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="640.9516677856445,150.29827594335939"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="crmChecker" Name="CRM Checker">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>crmVerification</Performer>
+                    <Deadline Execution="SYNCHR">
+                        <DeadlineCondition>var D=new java.util.Date(); D.setTime(ACTIVITY_ACTIVATED_TIME.getTime()+(2*86400000)); D;</DeadlineCondition>
+                        <ExceptionName>skip</ExceptionName>
+                    </Deadline>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="AND">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition43"/>
+                                    <TransitionRef Id="transition27"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="crmVerification"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="451.9459915161133,6.505666741210945"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route1" Name="1">
+                    <Route/>
+                    <Performer>crmVerification</Performer>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition23"/>
+                                    <TransitionRef Id="transition24"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="crmVerification"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="415.9232864379883,228.5937404716797"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="clarificationRequired" Name="Clarification Required">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>crmVerification</Performer>
+                    <Deadline Execution="SYNCHR">
+                        <DeadlineCondition>var D=new java.util.Date(); D.setTime(ACTIVITY_ACTIVATED_TIME.getTime()+(2*86400000)); D;</DeadlineCondition>
+                        <ExceptionName>skip</ExceptionName>
+                    </Deadline>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="AND">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition25"/>
+                                    <TransitionRef Id="transition55"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="crmVerification"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="981.832405090332,29.36078453906248"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route5">
+                    <Route/>
+                    <Performer>001_Requestor</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="001_Requestor"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="910.78125,11.1875"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="overPaymentExecute" Name="Over Payment Execute">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>overPaymentExecutor</Performer>
+                    <Deadline Execution="SYNCHR">
+                        <DeadlineCondition>var D=new java.util.Date(); D.setTime(ACTIVITY_ACTIVATED_TIME.getTime()+(2*86400000)); D;</DeadlineCondition>
+                        <ExceptionName>skip</ExceptionName>
+                    </Deadline>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="AND">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition36"/>
+                                    <TransitionRef Id="transition45"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="overPaymentExecutor"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="216.93180084228516,26.406225212890604"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route6">
+                    <Route/>
+                    <Performer>overPaymentExecutor</Performer>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition52"/>
+                                    <TransitionRef Id="transition38"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="overPaymentExecutor"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="106.93181610107422,126.90338707812498"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route7">
+                    <Route/>
+                    <Performer>actionExecutor</Performer>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition34"/>
+                                    <TransitionRef Id="transition33"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="actionExecutor"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="261.96021270751953,151.77557946093748"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route8">
+                    <Route/>
+                    <Performer>actionExecutor</Performer>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition32"/>
+                                    <TransitionRef Id="transition31"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="actionExecutor"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="887.9260940551758,446.59088517077635"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="FAapproval" Name="FA Approval (Credit Note)">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>ACTapprover</Performer>
+                    <Deadline Execution="SYNCHR">
+                        <DeadlineCondition>var D=new java.util.Date(); D.setTime(ACTIVITY_ACTIVATED_TIME.getTime()+(2*86400000)); D;</DeadlineCondition>
+                        <ExceptionName>skip</ExceptionName>
+                    </Deadline>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="AND">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition39"/>
+                                    <TransitionRef Id="transition53"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="ACTapprover"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="381.9375,160.90625"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="faApprovalOverpayment" Name="FA Approval (Overpayment)">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>ACTapprover</Performer>
+                    <Deadline Execution="SYNCHR">
+                        <DeadlineCondition>var D=new java.util.Date(); D.setTime(ACTIVITY_ACTIVATED_TIME.getTime()+(2*86400000)); D;</DeadlineCondition>
+                        <ExceptionName>skip</ExceptionName>
+                    </Deadline>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                            <Split Type="AND">
+                                <TransitionRefs>
+                                    <TransitionRef Id="transition42"/>
+                                    <TransitionRef Id="transition48"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="ACTapprover"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="141.96021270751953,59.41760826953123"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route9">
+                    <Route/>
+                    <Performer>ACTapprover</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="ACTapprover"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="950.994270324707,77.61365319140623"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route10">
+                    <Route/>
+                    <Performer>ACTapprover</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="ACTapprover"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="641.9885940551758,261.264226921875"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="route11">
+                    <Route/>
+                    <Performer>crmManager</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="crmManager"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="1150.984375,93.96875"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="CRMchecker" Name="CRM Checker">
+                    <Implementation>
+                        <Tool Id="default_application"/>
+                    </Implementation>
+                    <Performer>crmVerification</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="crmVerification"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="582.9545364379883,142.95453453906248"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="CRMmanager" Name="CRMmanager">
+                    <Implementation>
+                        <Tool Id="default_application"/>
+                    </Implementation>
+                    <Performer>crmManager</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="crmManager"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="166.9886245727539,194.6022701347656"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="creditNoteExecute" Name="Credit Note Execute">
+                    <Implementation>
+                        <Tool Id="default_application"/>
+                    </Implementation>
+                    <Performer>actionExecutor</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="actionExecutor"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="621.9885940551758,312.03124047167967"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="OverPaymentExecute" Name="Over Payment Execute">
+                    <Implementation>
+                        <Tool Id="default_application"/>
+                    </Implementation>
+                    <Performer>overPaymentExecutor</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="overPaymentExecutor"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="230.98011016845703,148.22443199999998"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="clarification" Name="Clarification Required">
+                    <Implementation>
+                        <Tool Id="default_application"/>
+                    </Implementation>
+                    <Performer>crmVerification</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="crmVerification"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="1174.985725402832,24.999990471679695"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="FAcreditNote" Name="FA Credit Note">
+                    <Implementation>
+                        <Tool Id="default_application"/>
+                    </Implementation>
+                    <Performer>ACTapprover</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="ACTapprover"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="369.9999771118164,286.7045345390625"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="FAoverPayment" Name="FA Over Payment">
+                    <Implementation>
+                        <Tool Id="default_application"/>
+                    </Implementation>
+                    <Performer>ACTapprover</Performer>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="ACTapprover"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="155.9659194946289,216.87500573046873"/>
+                    </ExtendedAttributes>
+                </Activity>
+            </Activities>
+            <Transitions>
+                <Transition From="execute" Id="transition13" To="route3">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="PBUILDER_TRANSITION_CONDITIONS" Value="[{&quot;join&quot;:&quot;&amp;&amp;&quot;,&quot;variable&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;===&quot;,&quot;value&quot;:&quot;Approve&quot;}]"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route1" Id="transition23" To="CRMApproval">
+                    <Condition Type="CONDITION">status === 'Approved by CRM Checker'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="PBUILDER_TRANSITION_CONDITIONS" Value="[{&quot;join&quot;:&quot;&amp;&amp;&quot;,&quot;variable&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;===&quot;,&quot;value&quot;:&quot;Approved by CRM Checker&quot;}]"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route1" Id="transition24" To="clarificationRequired">
+                    <Condition Type="CONDITION">status=='Clarification Required by CRM Checker'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="clarificationRequired" Id="transition25" To="crmChecker">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="overPaymentExecute" Id="transition36" To="route6">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="FAapproval" Id="transition39" To="route4">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="faApprovalOverpayment" Id="transition42" To="route4">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route2" Id="transition49" To="route7">
+                    <Condition Type="CONDITION">status === 'Approved by CRM Manager'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                        <ExtendedAttribute Name="PBUILDER_TRANSITION_CONDITIONS" Value="[{&quot;join&quot;:&quot;&amp;&amp;&quot;,&quot;variable&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;===&quot;,&quot;value&quot;:&quot;Approved by CRM Manager&quot;}]"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route4" Id="transition56" To="route8">
+                    <Condition Type="CONDITION">status=='Clarification Required by FA'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route4" Id="transition44" To="route9">
+                    <Condition Type="OTHERWISE"/>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route4" Id="transition59" To="route10">
+                    <Condition Type="CONDITION">status === 'Approved by FA'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="PBUILDER_TRANSITION_CONDITIONS" Value="[{&quot;join&quot;:&quot;&amp;&amp;&quot;,&quot;variable&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;===&quot;,&quot;value&quot;:&quot;Approved by FA&quot;}]"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route2" Id="transition62" To="clarificationRequired">
+                    <Condition Type="CONDITION">status=='Clarification Required by CRM Manager'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route3" Id="transition50" To="clarificationRequired">
+                    <Condition Type="CONDITION">status=='Clarification Required by Credit Note Executor'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route6" Id="transition52" To="clarificationRequired">
+                    <Condition Type="CONDITION">status=='Clarification Required by Over Payment Executor'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="crmChecker" Id="transition43" To="route1">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route5" Id="transition47" To="crmChecker">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="CRMApproval" Id="transition35" To="route2">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route7" Id="transition34" To="execute">
+                    <Condition Type="OTHERWISE"/>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route7" Id="transition33" To="overPaymentExecute">
+                    <Condition Type="CONDITION">reason=='Over Payment'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route8" Id="transition32" To="execute">
+                    <Condition Type="OTHERWISE"/>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route8" Id="transition31" To="overPaymentExecute">
+                    <Condition Type="CONDITION">reason=='Over Payment'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route6" Id="transition38" To="faApprovalOverpayment">
+                    <Condition Type="CONDITION">status === 'Approved by Over Payment Executor'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="PBUILDER_TRANSITION_CONDITIONS" Value="[{&quot;join&quot;:&quot;&amp;&amp;&quot;,&quot;variable&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;===&quot;,&quot;value&quot;:&quot;Approved by Over Payment Executor&quot;}]"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route3" Id="transition29" To="FAapproval">
+                    <Condition Type="CONDITION">status === 'Approved by Credit Note Executor'</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="PBUILDER_TRANSITION_CONDITIONS" Value="[{&quot;join&quot;:&quot;&amp;&amp;&quot;,&quot;variable&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;===&quot;,&quot;value&quot;:&quot;Approved by Credit Note Executor&quot;}]"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="route2" Id="transition26" To="route11">
+                    <Condition Type="OTHERWISE"/>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="crmChecker" Id="transition27" To="CRMchecker">
+                    <Condition Type="EXCEPTION">skip</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="CRMchecker" Id="transition28" To="crmChecker">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="CRMApproval" Id="transition30" To="CRMmanager">
+                    <Condition Type="EXCEPTION">skip</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="CRMmanager" Id="transition37" To="CRMApproval">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="execute" Id="transition40" To="creditNoteExecute">
+                    <Condition Type="EXCEPTION">skip</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="creditNoteExecute" Id="transition41" To="execute">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="overPaymentExecute" Id="transition45" To="OverPaymentExecute">
+                    <Condition Type="EXCEPTION">skip</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="OverPaymentExecute" Id="transition46" To="overPaymentExecute">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="faApprovalOverpayment" Id="transition48" To="FAoverPayment">
+                    <Condition Type="EXCEPTION">skip</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="FAoverPayment" Id="transition51" To="faApprovalOverpayment">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="FAapproval" Id="transition53" To="FAcreditNote">
+                    <Condition Type="EXCEPTION">skip</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_BREAK_POINTS" Value="orthogonal"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="FAcreditNote" Id="transition54" To="FAapproval">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="clarificationRequired" Id="transition55" To="clarification">
+                    <Condition Type="EXCEPTION">skip</Condition>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="clarification" Id="transition57" To="clarificationRequired">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_ORTHOGONAL"/>
+                    </ExtendedAttributes>
+                </Transition>
+            </Transitions>
+            <ExtendedAttributes>
+                <ExtendedAttribute Name="JaWE_GRAPH_WORKFLOW_PARTICIPANT_ORDER" Value="001_Requestor;crmVerification;crmManager;actionExecutor;overPaymentExecutor;ACTapprover;CEO_DCEOApproval"/>
+                <ExtendedAttribute Name="JaWE_GRAPH_START_OF_WORKFLOW" Value="JaWE_GRAPH_PARTICIPANT_ID=001_Requestor,CONNECTING_ACTIVITY_ID=route5,X_OFFSET=219,Y_OFFSET=34,JaWE_GRAPH_TRANSITION_STYLE=NO_ROUTING_ORTHOGONAL,TYPE=START_DEFAULT"/>
+                <ExtendedAttribute Name="JaWE_GRAPH_END_OF_WORKFLOW" Value="JaWE_GRAPH_PARTICIPANT_ID=ACTapprover,CONNECTING_ACTIVITY_ID=route9,X_OFFSET=1081,Y_OFFSET=85,JaWE_GRAPH_TRANSITION_STYLE=NO_ROUTING_ORTHOGONAL,TYPE=END_DEFAULT"/>
+                <ExtendedAttribute Name="JaWE_GRAPH_END_OF_WORKFLOW" Value="JaWE_GRAPH_PARTICIPANT_ID=ACTapprover,CONNECTING_ACTIVITY_ID=route10,X_OFFSET=807,Y_OFFSET=265,JaWE_GRAPH_TRANSITION_STYLE=NO_ROUTING_ORTHOGONAL,TYPE=END_DEFAULT"/>
+                <ExtendedAttribute Name="JaWE_GRAPH_END_OF_WORKFLOW" Value="JaWE_GRAPH_PARTICIPANT_ID=crmManager,CONNECTING_ACTIVITY_ID=route11,X_OFFSET=1318,Y_OFFSET=100,JaWE_GRAPH_TRANSITION_STYLE=NO_ROUTING_ORTHOGONAL,TYPE=END_DEFAULT"/>
+            </ExtendedAttributes>
+        </WorkflowProcess>
+    </WorkflowProcesses>
+    <ExtendedAttributes>
+        <ExtendedAttribute Name="EDITING_TOOL" Value="Web Workflow Designer"/>
+        <ExtendedAttribute Name="EDITING_TOOL_VERSION" Value="5.0-pre-alpha"/>
+    </ExtendedAttributes>
+</Package>

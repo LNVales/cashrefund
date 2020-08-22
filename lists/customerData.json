@@ -1,0 +1,61 @@
+{
+    "actions": [],
+    "binder": {
+        "className": "org.joget.plugin.enterprise.AdvancedFormRowDataListBinder",
+        "properties": {
+            "extraCondition": "",
+            "filters": [],
+            "formDefId": "uploadCustomer"
+        }
+    },
+    "buttonPosition": "bottomLeft",
+    "checkboxPosition": "left",
+    "columns": [
+        {
+            "displayLabel": "Tax ID",
+            "id": "column_3",
+            "label": "Tax ID",
+            "name": "taxId"
+        },
+        {
+            "displayLabel": "Branch",
+            "id": "column_0",
+            "label": "Branch",
+            "name": "Branch"
+        },
+        {
+            "displayLabel": "Consignee Name",
+            "id": "column_1",
+            "label": "Consignee Name",
+            "name": "consigneeName"
+        },
+        {
+            "displayLabel": "Address",
+            "id": "column_2",
+            "label": "Address",
+            "name": "address"
+        }
+    ],
+    "description": "",
+    "filters": [
+        {
+            "id": "filter_0",
+            "label": "Tax ID",
+            "name": "taxId"
+        },
+        {
+            "id": "filter_1",
+            "label": "Consignee Name",
+            "name": "consigneeName"
+        }
+    ],
+    "id": "customerData",
+    "name": "Customer Detail",
+    "order": "",
+    "orderBy": "",
+    "pageSize": 0,
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "rowActions": [],
+    "showPageSizeSelector": "true",
+    "useSession": "false"
+}

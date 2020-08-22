@@ -1,0 +1,1565 @@
+{
+    "className": "org.joget.apps.form.model.Form",
+    "elements": [
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [
+                {
+                    "className": "org.joget.apps.form.model.Column",
+                    "elements": [
+                        {
+                            "className": "org.joget.plugin.enterprise.MultiSelectBox",
+                            "properties": {
+                                "controlField": "",
+                                "id": "taxId",
+                                "label": "Tax ID (เลขประจำตัวผู้เสียภาษี)",
+                                "multiple": "",
+                                "options": [],
+                                "optionsBinder": {
+                                    "className": "org.joget.apps.form.lib.FormOptionsBinder",
+                                    "properties": {
+                                        "addEmptyOption": "",
+                                        "emptyLabel": "",
+                                        "extraCondition": "",
+                                        "formDefId": "uploadCustomer",
+                                        "groupingColumn": "",
+                                        "idColumn": "id",
+                                        "labelColumn": "taxId",
+                                        "useAjax": ""
+                                    }
+                                },
+                                "readonly": "",
+                                "readonlyLabel": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "value": "",
+                                "width": "40%",
+                                "workflowVariable": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.plugin.enterprise.AjaxSubForm",
+                            "properties": {
+                                "ajax": "true",
+                                "collapsible": "",
+                                "collapsibleExpanded": "true",
+                                "collapsibleLabelCollapsed": "View Details",
+                                "collapsibleLabelExpanded": "Hide Details",
+                                "formDefId": "customerDetailAJAX",
+                                "hideEmpty": "",
+                                "id": "aa",
+                                "label": "",
+                                "noLoad": "",
+                                "noframe": "true",
+                                "parentSubFormId": "taxId",
+                                "readonly": "",
+                                "readonlyLabel": "",
+                                "storeBinder": {
+                                    "className": "org.joget.plugin.enterprise.ParentFormBinder",
+                                    "properties": {}
+                                },
+                                "subFormParentId": ""
+                            }
+                        }
+                    ],
+                    "properties": {"width": "49%"}
+                },
+                {
+                    "className": "org.joget.apps.form.model.Column",
+                    "elements": [{
+                        "className": "org.joget.apps.form.lib.DatePicker",
+                        "properties": {
+                            "allowManual": "",
+                            "currentDateAs": "",
+                            "dataFormat": "",
+                            "endDateFieldId": "",
+                            "format": "",
+                            "id": "field3",
+                            "label": "Request Date (วันที่ขอ)",
+                            "readonly": "true",
+                            "readonlyLabel": "",
+                            "startDateFieldId": "",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "mandatory": "true",
+                                    "message": "",
+                                    "type": ""
+                                }
+                            },
+                            "value": "#date.dd/MM/yyyy HH:mm#",
+                            "workflowVariable": "",
+                            "yearRange": "c-10:c+10"
+                        }
+                    }],
+                    "properties": {"width": "49%"}
+                }
+            ],
+            "properties": {
+                "id": "Customer Cash Refund form",
+                "label": "Customer Cash Refund Form (แบบฟอร์มขอคืนเงิน/ลดหนี้)",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.SelectBox",
+                        "properties": {
+                            "controlField": "",
+                            "id": "field20",
+                            "label": "Company (บริษัท)",
+                            "multiple": "",
+                            "options": [
+                                {
+                                    "grouping": "",
+                                    "label": "Select",
+                                    "value": ""
+                                },
+                                {
+                                    "grouping": "LCB1",
+                                    "label": "LCB1",
+                                    "value": "LCB1"
+                                },
+                                {
+                                    "grouping": "LCMT",
+                                    "label": "LCMT",
+                                    "value": "LCMT"
+                                }
+                            ],
+                            "optionsBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "mandatory": "true",
+                                    "message": "",
+                                    "type": ""
+                                }
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.SelectBox",
+                        "properties": {
+                            "controlField": "",
+                            "id": "reason",
+                            "label": "Reason (เหตุผลในการขอคืนเงิน)",
+                            "multiple": "",
+                            "options": [
+                                {
+                                    "grouping": "",
+                                    "label": "Select",
+                                    "value": ""
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "โอนเงินหรือสั่งจ่ายเช็คเกินจำนวน (Over Payment)",
+                                    "value": "Over Payment"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ไม่ได้ใช้บริการ (Cancel Booking)",
+                                    "value": "Cancel Booking"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ชำระซ้ำ (Double Paid)",
+                                    "value": "Double Paid"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ส่วนลด (Discount)",
+                                    "value": "Discount"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "เครดิตค่า Lift on, Lift Off, Relocation, Storage",
+                                    "value": "Credit"
+                                }
+                            ],
+                            "optionsBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "mandatory": "true",
+                                    "message": "",
+                                    "type": ""
+                                }
+                            },
+                            "value": "",
+                            "workflowVariable": "reason"
+                        }
+                    }
+                ],
+                "properties": {
+                    "customWidth": "600",
+                    "horizontal": "",
+                    "label": "",
+                    "width": "600"
+                }
+            }],
+            "properties": {
+                "id": "section6",
+                "label": "Refund Detail (รายละเอียดการขอคืนเงิน/ลดหนี้)",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.SelectBox",
+                    "properties": {
+                        "controlField": "",
+                        "id": "paymentMethod",
+                        "label": "Payment Method (วิธีการจ่ายเงิน)",
+                        "multiple": "",
+                        "options": [
+                            {
+                                "grouping": "",
+                                "label": "Select",
+                                "value": ""
+                            },
+                            {
+                                "grouping": "Over Payment",
+                                "label": "Cheque (สั่งจ่ายเช็ค)",
+                                "value": "Cheque"
+                            },
+                            {
+                                "grouping": "Over Payment",
+                                "label": "Money Transfer (โอนเงิน)",
+                                "value": "Money Transfer"
+                            }
+                        ],
+                        "optionsBinder": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "readonly": "",
+                        "readonlyLabel": "",
+                        "size": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "value": "",
+                        "workflowVariable": ""
+                    }
+                }],
+                "properties": {
+                    "customWidth": "600",
+                    "horizontal": "",
+                    "label": "",
+                    "width": "600"
+                }
+            }],
+            "properties": {
+                "id": "paymentMethod",
+                "label": "Payment Method",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "reason",
+                "visibilityValue": "Over Payment"
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.SelectBox",
+                        "properties": {
+                            "controlField": "",
+                            "id": "bank",
+                            "label": "Bank (ธนาคารผู้ออกเช็ค)",
+                            "multiple": "",
+                            "options": [
+                                {
+                                    "grouping": "",
+                                    "label": "Select",
+                                    "value": ""
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารกรุงเทพ (BBL)",
+                                    "value": "BANGKOK BANK"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารกรุงศรีอยุธยา (BAY)",
+                                    "value": "BANK OF AYUDHYA"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารกสิกรไทย (KBANK)",
+                                    "value": "KASIKORN BANK"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารซีไอเอ็มบีไทย (CIMB)",
+                                    "value": "CIMB THAI"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารทหารไทย (TMB)",
+                                    "value": "TMB BANK (TMB)"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารทิสโก้ (TISCO)",
+                                    "value": "TISCO"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารไทยพาณิชย์ (SCB)",
+                                    "value": "SIAM COMMERCIAL BANK (SCB)"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารธนชาต (TBANK)",
+                                    "value": "THANACHART BANK (TBANK)"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารยูโอบี (UOB)",
+                                    "value": "UOB BANK (UOB)"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย) (SCBT)",
+                                    "value": "STANDARD CHARTERED (SCBT)"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารกรุงไทย (KTB)",
+                                    "value": "KRUNG THAI BANK (KTB)"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร (BAAC)",
+                                    "value": "BANK OF AGRICULTURE AND AGRICULTURAL CORPORATIVES"
+                                },
+                                {
+                                    "grouping": "",
+                                    "label": "ธนาคารเพื่อการส่งออกและนำเข้าแห่งประเทศไทย (EXIM)",
+                                    "value": "EXPORT-IMPORT BANK (EXIM)"
+                                }
+                            ],
+                            "optionsBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "chequeNumber",
+                            "label": "Cheque Number (เลขที่เช็ค)",
+                            "maxlength": "",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "paidAmount",
+                            "label": "Cheque Amount (จำนวนเงินหน้าเช็ค)",
+                            "maxlength": "",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.plugin.enterprise.AdvancedGrid",
+                        "properties": {
+                            "deleteMessage": "Delete row?",
+                            "disabledAdd": "",
+                            "disabledDelete": "",
+                            "errorMessage": "Invalid number of rows",
+                            "formDefId": "customerSection",
+                            "hint": "Click to edit. Enter to save.",
+                            "id": "refundDetailCheque",
+                            "keyToSave": "13",
+                            "label": "",
+                            "loadBinder": {
+                                "className": "org.joget.plugin.enterprise.MultirowFormBinder",
+                                "properties": {
+                                    "foreignKey": "parent_id",
+                                    "formDefId": "customerSection"
+                                }
+                            },
+                            "options": [
+                                {
+                                    "formatType": "",
+                                    "label": "Receipt/Tax Invoice (ใบเสร็จรับเงิน/ใบกำกับภาษี)",
+                                    "value": "ReceiptTaxInvoice",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Invoice No. (เลขที่ใบแจ้งหนี้)",
+                                    "value": "InvoiceNo",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Receipt Amount (Excl. VAT) (จำนวนเงิน หน้าใบเสร็จ ไม่รวม VAT)",
+                                    "value": "receiptAmountExcludingVat",
+                                    "width": ""
+                                },
+                                {
+                                    "formatType": "float",
+                                    "label": "Deduct Withholding Tax (หักภาษี ณ ที่จ่าย)",
+                                    "value": "deductWithholdingTax",
+                                    "width": "70"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Deduct Withholding Tax Amount (จำนวนเงินหักภาษี ณ ที่จ่าย)",
+                                    "value": "deductWithholdingTaxAmount",
+                                    "width": ""
+                                },
+                                {
+                                    "formatType": "float",
+                                    "label": "Total Payment (จำนวนเงินที่ต้องจ่าย)",
+                                    "value": "totalPayment",
+                                    "width": "100"
+                                }
+                            ],
+                            "pagingOptions": "10,20,50,100",
+                            "readonly": "",
+                            "recordPerPage": "20",
+                            "search": "",
+                            "showRowNumber": "true",
+                            "sortIndx": "",
+                            "storeBinder": {
+                                "className": "org.joget.plugin.enterprise.MultirowFormBinder",
+                                "properties": {
+                                    "foreignKey": "parent_id",
+                                    "formDefId": "customerSection"
+                                }
+                            },
+                            "uniqueKey": "",
+                            "validateMaxRow": "",
+                            "validateMinRow": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            }
+                        }
+                    },
+                    {
+                        "className": "org.joget.plugin.enterprise.CalculationField",
+                        "properties": {
+                            "equation": "",
+                            "hidden": "",
+                            "id": "total_1_1",
+                            "label": "Total Actual Payment Amount (จำนวนเงินที่จ่ายจริง)",
+                            "numOfDecimal": "2",
+                            "postfix": "",
+                            "prefix": "",
+                            "readonlyLabel": "",
+                            "style": "us",
+                            "useThousandSeparator": "true",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "variables": [{
+                                "fieldId": "refundDetailCheque.totalPayment",
+                                "operation": "sum",
+                                "variableName": ""
+                            }],
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.plugin.enterprise.CalculationField",
+                        "properties": {
+                            "equation": "a-b",
+                            "hidden": "",
+                            "id": "totalNetRefundAmount",
+                            "label": "Total Net Refund Amount (จำนวนเงินที่ขอคืน)",
+                            "numOfDecimal": "2",
+                            "postfix": "",
+                            "prefix": "",
+                            "readonlyLabel": "",
+                            "style": "us",
+                            "useThousandSeparator": "true",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "variables": [
+                                {
+                                    "fieldId": "paidAmount",
+                                    "operation": "sum",
+                                    "variableName": "a"
+                                },
+                                {
+                                    "fieldId": "total_1_1",
+                                    "operation": "sum",
+                                    "variableName": "b"
+                                }
+                            ],
+                            "workflowVariable": ""
+                        }
+                    }
+                ],
+                "properties": {
+                    "customWidth": "",
+                    "horizontal": "",
+                    "label": "",
+                    "width": "100%"
+                }
+            }],
+            "properties": {
+                "id": "paymentDetailsCheque",
+                "label": "Payment Details (Cheque)",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "paymentMethod",
+                "visibilityValue": "Cheque"
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.SelectBox",
+                        "properties": {
+                            "controlField": "field20",
+                            "id": "companyBankAccount",
+                            "label": "Company Bank Account (บัญชีธนาคารที่โอนเข้า)",
+                            "multiple": "",
+                            "options": [
+                                {
+                                    "grouping": "LCB1",
+                                    "label": "Select",
+                                    "value": ""
+                                },
+                                {
+                                    "grouping": "LCMT",
+                                    "label": "Select",
+                                    "value": ""
+                                },
+                                {
+                                    "grouping": "LCB1",
+                                    "label": "Kasikorn Bank (Saving 354-2-31881-2)",
+                                    "value": "Kasikorn Bank (Saving 354-2-31881-2)"
+                                },
+                                {
+                                    "grouping": "LCB1",
+                                    "label": "TMB Bank (Saving 339-2-85537-9)",
+                                    "value": "TMB Bank (Saving 339-2-85537-9)"
+                                },
+                                {
+                                    "grouping": "LCMT",
+                                    "label": "Kasikorn Bank (Saving  354-2-06819-2)",
+                                    "value": "Kasikorn Bank (Saving  354-2-06819-2)"
+                                },
+                                {
+                                    "grouping": "LCMT",
+                                    "label": "TMB Bank (Saving 339-2-85536-1)",
+                                    "value": "TMB Bank (Saving 339-2-85536-1)"
+                                }
+                            ],
+                            "optionsBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "paidAmount",
+                            "label": "Transfer Amount (จำนวนเงินที่โอน)",
+                            "maxlength": "",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.plugin.enterprise.AdvancedGrid",
+                        "properties": {
+                            "deleteMessage": "Delete row?",
+                            "disabledAdd": "",
+                            "disabledDelete": "",
+                            "errorMessage": "Invalid number of rows",
+                            "formDefId": "customerSection",
+                            "hint": "Click to edit. Enter to save.",
+                            "id": "refundDetailMoneyTransfer",
+                            "keyToSave": "13",
+                            "label": "",
+                            "loadBinder": {
+                                "className": "org.joget.plugin.enterprise.MultirowFormBinder",
+                                "properties": {
+                                    "foreignKey": "parent_id",
+                                    "formDefId": "customerSection"
+                                }
+                            },
+                            "options": [
+                                {
+                                    "formatType": "",
+                                    "label": "Receipt/Tax Invoice (ใบเสร็จรับเงิน/ใบกำกับภาษี)",
+                                    "value": "ReceiptTaxInvoice",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Invoice No. (เลขที่ใบแจ้งหนี้)",
+                                    "value": "InvoiceNo",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Receipt Amount (Excl.VAT) (จำนวนเงิน หน้าใบเสร็จ ไม่รวม VAT)",
+                                    "value": "receiptAmountExcludingVat",
+                                    "width": ""
+                                },
+                                {
+                                    "formatType": "float",
+                                    "label": "Deduct Withholding Tax (หักภาษี ณ ที่จ่าย)",
+                                    "value": "deductWithholdingTax",
+                                    "width": "70"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Deduct Withholding Tax Amount (จำนวนเงินหักภาษี ณ ที่จ่าย)",
+                                    "value": "deductWithholdingTaxAmount",
+                                    "width": ""
+                                },
+                                {
+                                    "formatType": "float",
+                                    "label": "Total Payment (จำนวนเงินที่ต้องจ่าย)",
+                                    "value": "totalPayment",
+                                    "width": "100"
+                                }
+                            ],
+                            "pagingOptions": "10,20,50,100",
+                            "readonly": "",
+                            "recordPerPage": "20",
+                            "search": "",
+                            "showRowNumber": "true",
+                            "sortIndx": "",
+                            "storeBinder": {
+                                "className": "org.joget.plugin.enterprise.MultirowFormBinder",
+                                "properties": {
+                                    "foreignKey": "parent_id",
+                                    "formDefId": "customerSection"
+                                }
+                            },
+                            "uniqueKey": "",
+                            "validateMaxRow": "",
+                            "validateMinRow": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            }
+                        }
+                    },
+                    {
+                        "className": "org.joget.plugin.enterprise.CalculationField",
+                        "properties": {
+                            "equation": "",
+                            "hidden": "",
+                            "id": "total_1_1",
+                            "label": "Total Actual Payment Amount (จำนวนเงินที่จ่ายจริง)",
+                            "numOfDecimal": "2",
+                            "postfix": "",
+                            "prefix": "",
+                            "readonlyLabel": "",
+                            "style": "us",
+                            "useThousandSeparator": "true",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "variables": [{
+                                "fieldId": "refundDetailMoneyTransfer.totalPayment",
+                                "operation": "sum",
+                                "variableName": ""
+                            }],
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.plugin.enterprise.CalculationField",
+                        "properties": {
+                            "equation": "a-b",
+                            "hidden": "",
+                            "id": "totalNetRefundAmount",
+                            "label": "Total Net Refund Amount (จำนวนเงินที่ขอคืน)",
+                            "numOfDecimal": "2",
+                            "postfix": "",
+                            "prefix": "",
+                            "readonlyLabel": "",
+                            "style": "us",
+                            "useThousandSeparator": "true",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "variables": [
+                                {
+                                    "fieldId": "paidAmount",
+                                    "operation": "sum",
+                                    "variableName": "a"
+                                },
+                                {
+                                    "fieldId": "total_1_1",
+                                    "operation": "sum",
+                                    "variableName": "b"
+                                }
+                            ],
+                            "workflowVariable": ""
+                        }
+                    }
+                ],
+                "properties": {
+                    "customWidth": "",
+                    "horizontal": "",
+                    "label": "",
+                    "width": "100%"
+                }
+            }],
+            "properties": {
+                "id": "paymentDetailsMoneyTransfer",
+                "label": "Payment Details (Money Transfer)",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "paymentMethod",
+                "visibilityValue": "Money Transfer"
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.plugin.enterprise.AdvancedGrid",
+                        "properties": {
+                            "deleteMessage": "Delete row?",
+                            "disabledAdd": "",
+                            "disabledDelete": "",
+                            "errorMessage": "Invalid number of rows",
+                            "formDefId": "customerSection",
+                            "hint": "Click to edit. Enter to save.",
+                            "id": "requestRefundDetails",
+                            "keyToSave": "13",
+                            "label": "",
+                            "loadBinder": {
+                                "className": "org.joget.plugin.enterprise.MultirowFormBinder",
+                                "properties": {
+                                    "foreignKey": "parent_id",
+                                    "formDefId": "customerSection"
+                                }
+                            },
+                            "options": [
+                                {
+                                    "formatType": "",
+                                    "label": "Receipt/Tax Invoice (ใบเสร็จรับเงิน/ใบกำกับภาษี)",
+                                    "value": "ReceiptTaxInvoice",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Invoice No. (เลขที่ใบแจ้งหนี้)",
+                                    "value": "InvoiceNo",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Container No. (หมายเลขตู้)",
+                                    "value": "containerNo",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Container Size",
+                                    "value": "containerSize",
+                                    "width": "50"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Receipt Amount (Excl. VAT) (จำนวนเงิน หน้าใบเสร็จ ไม่รวม VAT)",
+                                    "value": "receiptAmountExcludingVat",
+                                    "width": "70"
+                                },
+                                {
+                                    "formatType": "float",
+                                    "label": "Deduct Withholding Tax (หักภาษี ณ ที่จ่าย)",
+                                    "value": "deductWithholdingTax",
+                                    "width": "50"
+                                },
+                                {
+                                    "formatType": "",
+                                    "label": "Deduct Withholding Tax Amount (จำนวนเงินหักภาษี ณ ที่จ่าย)",
+                                    "value": "deductWithholdingTaxAmount",
+                                    "width": "100"
+                                },
+                                {
+                                    "formatType": "float",
+                                    "label": "Total Payment (จำนวนเงินที่ต้องจ่าย)",
+                                    "value": "totalPayment",
+                                    "width": "100"
+                                }
+                            ],
+                            "pagingOptions": "10,20,50,100",
+                            "readonly": "",
+                            "recordPerPage": "20",
+                            "search": "",
+                            "showRowNumber": "true",
+                            "sortIndx": "",
+                            "storeBinder": {
+                                "className": "org.joget.plugin.enterprise.MultirowFormBinder",
+                                "properties": {
+                                    "foreignKey": "parent_id",
+                                    "formDefId": "customerSection"
+                                }
+                            },
+                            "uniqueKey": "",
+                            "validateMaxRow": "",
+                            "validateMinRow": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            }
+                        }
+                    },
+                    {
+                        "className": "org.joget.plugin.enterprise.CalculationField",
+                        "properties": {
+                            "equation": "",
+                            "hidden": "",
+                            "id": "totalNetRefundAmount",
+                            "label": "Total Refund Amount (จำนวนเงินที่ขอคืนเงิน/ลดหนี้)",
+                            "numOfDecimal": "2",
+                            "postfix": "",
+                            "prefix": "",
+                            "readonlyLabel": "",
+                            "style": "us",
+                            "useThousandSeparator": "true",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "variables": [{
+                                "fieldId": "requestRefundDetails.totalPayment",
+                                "operation": "sum",
+                                "variableName": ""
+                            }],
+                            "workflowVariable": ""
+                        }
+                    }
+                ],
+                "properties": {
+                    "customWidth": "",
+                    "horizontal": "",
+                    "label": "",
+                    "width": "100%"
+                }
+            }],
+            "properties": {
+                "id": "requestRefundDetails_1",
+                "label": "Container Details (รายละเอียดตู้คอนเทนเนอร์)",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "true",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "reason",
+                "visibilityValue": "Cancel Booking|Discount|Double Paid|Credit"
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "receipientName",
+                            "label": "Receipient Name (ชื่อผู้รับเงิน)",
+                            "maxlength": "",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "50",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "receipientid",
+                            "label": "Recipient ID (เลขบัตรประจำตัวประชาชนผู้รับเงิน)",
+                            "maxlength": "",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "50",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "receipientid_1",
+                            "label": "Recipient Telephone No. (เบอร์โทรศัพท์ติดต่อผู้รับเงิน)",
+                            "maxlength": "",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "50",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    }
+                ],
+                "properties": {
+                    "customWidth": "600",
+                    "horizontal": "",
+                    "label": "",
+                    "width": "600"
+                }
+            }],
+            "properties": {
+                "id": "receipient",
+                "label": "Receipient Information",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "contactPersonName",
+                            "label": "Name (ชื่อผู้ประสานงาน)",
+                            "maxlength": "",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "50",
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "custom-regex": "",
+                                    "mandatory": "",
+                                    "message": "",
+                                    "type": ""
+                                }
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "encryption": "",
+                            "id": "contactPersonTel",
+                            "label": "Telephone No. (เบอร์โทรศัพท์ผู้ประสานงาน)",
+                            "maxlength": "",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "size": "50",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "value": "",
+                            "workflowVariable": ""
+                        }
+                    }
+                ],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "contactPerson",
+                "label": "Contact Person (ผู้ติดต่อประสานงาน)",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.CustomHTML",
+                        "properties": {
+                            "autoPopulate": "",
+                            "id": "attachment",
+                            "label": "",
+                            "value": "<b>เรียน ลูกค้าทุกท่าน<\/b><br>\n        <br>กรุณาแสกนและแนบเอกสารตามรายการด้านล่างนี้ โดยรวมกันเป็น 1 ไฟล์\n        <br>1. ใบเสร็จรับเงิน/ใบกำกับภาษี (แสกนสีเท่านั้น)\n        <br>2. จดหมายขอคืนเงินจากทางลูกค้า\n        <br>3. สำเนาบัตรประชาชนตัวแทนรับเงิน (รับรองสำเนาถูกต้อง)\n        <br>4. สำเนาใบหักภาษี ณ ที่จ่าย (ถ้ามี)\n        <br>5. สำเนาเช็ค (ถ้ามี)\n        <br>5. สำเนาหลักฐานการโอนเงิน pay-in slip (ถ้ามี)<br>\n        <br>"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.FileUpload",
+                        "properties": {
+                            "attachment": "",
+                            "fileType": ".pdf;.doc;.jpg;.msg;.png",
+                            "fileTypeMsg": "Invalid file type",
+                            "id": "attachmentFromConsignee",
+                            "label": "Attachment (เอกสารแนบ)",
+                            "maxSize": "",
+                            "maxSizeMsg": "File size limit exceeded",
+                            "multiple": "",
+                            "permissionType": "",
+                            "readonly": "",
+                            "size": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            }
+                        }
+                    }
+                ],
+                "properties": {
+                    "customWidth": "600",
+                    "horizontal": "",
+                    "label": "",
+                    "width": "600"
+                }
+            }],
+            "properties": {
+                "id": "attachment",
+                "label": "Attachment (เอกสารแนบ)",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.IdGeneratorField",
+                        "properties": {
+                            "envVariable": "RequestNo",
+                            "format": "????",
+                            "hidden": "true",
+                            "id": "RequestNo",
+                            "label": "Request No.",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "id": "username",
+                            "useDefaultWhenEmpty": "",
+                            "value": "#currentUser.username#",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "id": "firstName",
+                            "useDefaultWhenEmpty": "",
+                            "value": "#currentUser.firstName#",
+                            "workflowVariable": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "id": "Status",
+                            "useDefaultWhenEmpty": "",
+                            "value": "Pending",
+                            "workflowVariable": "status"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.SubForm",
+                        "properties": {
+                            "formDefId": "statusLog",
+                            "id": "sfLog",
+                            "label": "",
+                            "loadBinder": {
+                                "className": "org.joget.apps.form.lib.BeanShellFormBinder",
+                                "properties": {
+                                    "script": "return null;",
+                                    "useAjax": ""
+                                }
+                            },
+                            "noframe": "true",
+                            "parentSubFormId": "LastLogId",
+                            "readonly": "",
+                            "readonlyLabel": "",
+                            "storeBinder": {
+                                "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                                "properties": {}
+                            },
+                            "subFormParentId": "ParentId"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.CustomHTML",
+                        "properties": {
+                            "autoPopulate": "",
+                            "id": "field16",
+                            "label": "",
+                            "value": "<script>\r\n$(document).ready( function(){\r\n\t$('#assignmentComplete,#submit').click(function() {\r\n\t\t$('[name$=LogRemark]').val($('[name$=Purpose]').val());\r\n\t\t$('[name$=LogStatus]').val($('[name$=Status]').val());\r\n\t});\r\n});\r\n<\/script>"
+                        }
+                    }
+                ],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "section2",
+                "label": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityControl": "Status",
+                "visibilityValue": "Pending"
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.TextField",
+                    "properties": {
+                        "encryption": "",
+                        "id": "cashRefundType",
+                        "label": "Credit Note",
+                        "maxlength": "",
+                        "readonly": "true",
+                        "readonlyLabel": "true",
+                        "size": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "value": "Credit Note",
+                        "workflowVariable": ""
+                    }
+                }],
+                "properties": {
+                    "customWidth": "",
+                    "horizontal": "",
+                    "label": "",
+                    "width": "100%"
+                }
+            }],
+            "properties": {
+                "id": "cashRefundType",
+                "label": "",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "true",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "reason",
+                "visibilityValue": "Cancel Booking|Discount|Double Paid|Credit"
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.TextField",
+                    "properties": {
+                        "encryption": "",
+                        "id": "cashRefundType",
+                        "label": "Over Payment",
+                        "maxlength": "",
+                        "readonly": "true",
+                        "readonlyLabel": "true",
+                        "size": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "value": "Over Payment",
+                        "workflowVariable": ""
+                    }
+                }],
+                "properties": {
+                    "customWidth": "600",
+                    "horizontal": "",
+                    "label": "",
+                    "width": "600"
+                }
+            }],
+            "properties": {
+                "id": "overPayment",
+                "label": "",
+                "loadBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                    "properties": {}
+                },
+                "visibilityControl": "reason",
+                "visibilityValue": "Over Payment"
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.IdGeneratorField",
+                    "properties": {
+                        "envVariable": "counterA0",
+                        "format": "CASH-R-A0-#date.YYYY#-???",
+                        "hidden": "",
+                        "id": "field5",
+                        "label": "Request No.",
+                        "workflowVariable": ""
+                    }
+                }],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "LCMTRequestNo",
+                "label": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityControl": "field20",
+                "visibilityValue": "LCMT"
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.IdGeneratorField",
+                    "properties": {
+                        "envVariable": "counter",
+                        "format": "CASH-R-B1-#date.YYYY#-???",
+                        "hidden": "",
+                        "id": "field5",
+                        "label": "Request No.",
+                        "workflowVariable": ""
+                    }
+                }],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "lcb1RequestNo",
+                "label": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityControl": "field20",
+                "visibilityValue": "LCB1"
+            }
+        },
+        {
+            "className": "org.joget.apps.form.model.Section",
+            "elements": [{
+                "className": "org.joget.apps.form.model.Column",
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.CustomHTML",
+                    "properties": {
+                        "autoPopulate": "",
+                        "id": "Colour",
+                        "label": "",
+                        "value": "<style>\n#totalNetRefundAmount{\n\tbackground-color: #F2F5A9;\n    font-size: 15px;\n}\n<\/style>"
+                    }
+                }],
+                "properties": {"width": "100%"}
+            }],
+            "properties": {
+                "id": "section15",
+                "label": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "permission": {
+                    "className": "org.joget.plugin.enterprise.AdminUserviewPermission",
+                    "properties": {}
+                },
+                "regex": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityControl": "",
+                "visibilityValue": ""
+            }
+        }
+    ],
+    "properties": {
+        "description": "",
+        "id": "001",
+        "loadBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "name": "00_Cash Refund Form",
+        "noPermissionMessage": "",
+        "permission": {
+            "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+            "properties": {}
+        },
+        "postProcessor": {
+            "className": "",
+            "properties": {}
+        },
+        "postProcessorRunOn": "both",
+        "storeBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "tableName": "CashRefund"
+    }
+}

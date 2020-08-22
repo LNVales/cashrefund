@@ -1,0 +1,381 @@
+{
+    "className": "org.joget.apps.form.model.Form",
+    "elements": [{
+        "className": "org.joget.apps.form.model.Section",
+        "elements": [{
+            "className": "org.joget.apps.form.model.Column",
+            "elements": [
+                {
+                    "className": "org.joget.apps.form.lib.TextField",
+                    "properties": {
+                        "encryption": "",
+                        "id": "ReceiptTaxInvoice",
+                        "label": "Receipt/Tax Invoice (ใบเสร็จรับเงิน/ใบกำกับภาษี)",
+                        "maxlength": "",
+                        "readonly": "",
+                        "readonlyLabel": "",
+                        "size": "",
+                        "validator": {
+                            "className": "org.joget.apps.form.lib.DefaultValidator",
+                            "properties": {
+                                "custom-regex": "",
+                                "mandatory": "true",
+                                "message": "",
+                                "type": "alphanumeric"
+                            }
+                        },
+                        "value": "",
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.apps.form.lib.TextField",
+                    "properties": {
+                        "encryption": "",
+                        "id": "InvoiceNo",
+                        "label": "Invoice No. (เลขที่ใบแจ้งหนี้)",
+                        "maxlength": "",
+                        "readonly": "",
+                        "readonlyLabel": "",
+                        "size": "",
+                        "validator": {
+                            "className": "org.joget.apps.form.lib.DefaultValidator",
+                            "properties": {
+                                "custom-regex": "",
+                                "mandatory": "true",
+                                "message": "",
+                                "type": ""
+                            }
+                        },
+                        "value": "CA",
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.apps.form.lib.TextField",
+                    "properties": {
+                        "encryption": "",
+                        "id": "containerNo",
+                        "label": "Container No. (หมายเลขตู้)",
+                        "maxlength": "",
+                        "readonly": "",
+                        "readonlyLabel": "",
+                        "size": "",
+                        "validator": {
+                            "className": "org.joget.apps.form.lib.DefaultValidator",
+                            "properties": {
+                                "custom-regex": "",
+                                "mandatory": "true",
+                                "message": "",
+                                "type": "alphanumeric"
+                            }
+                        },
+                        "value": "",
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.apps.form.lib.SelectBox",
+                    "properties": {
+                        "controlField": "",
+                        "id": "containerSize",
+                        "label": "Container Size",
+                        "multiple": "",
+                        "options": [
+                            {
+                                "grouping": "",
+                                "label": "20'",
+                                "value": "20'"
+                            },
+                            {
+                                "grouping": "",
+                                "label": "40'",
+                                "value": "40'"
+                            },
+                            {
+                                "grouping": "",
+                                "label": "45'",
+                                "value": "45'"
+                            }
+                        ],
+                        "optionsBinder": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "readonly": "",
+                        "readonlyLabel": "",
+                        "size": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "value": "",
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.apps.form.lib.TextField",
+                    "properties": {
+                        "encryption": "",
+                        "id": "receiptAmountExcludingVat",
+                        "label": "Receipt Amount (Excluding VAT)",
+                        "maxlength": "",
+                        "readonly": "",
+                        "readonlyLabel": "",
+                        "size": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "value": "",
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.apps.form.lib.SelectBox",
+                    "properties": {
+                        "controlField": "",
+                        "id": "deductWithholdingTax",
+                        "label": "Deduct Withholding Tax",
+                        "multiple": "",
+                        "options": [
+                            {
+                                "grouping": "",
+                                "label": "Select",
+                                "value": ""
+                            },
+                            {
+                                "grouping": "",
+                                "label": "None",
+                                "value": ""
+                            },
+                            {
+                                "grouping": "",
+                                "label": "1%",
+                                "value": "1"
+                            },
+                            {
+                                "grouping": "",
+                                "label": "3%",
+                                "value": "3"
+                            },
+                            {
+                                "grouping": "",
+                                "label": "5%",
+                                "value": "5"
+                            },
+                            {
+                                "grouping": "",
+                                "label": "15%",
+                                "value": "15"
+                            }
+                        ],
+                        "optionsBinder": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "readonly": "",
+                        "readonlyLabel": "",
+                        "size": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "value": "",
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.plugin.enterprise.CalculationField",
+                    "properties": {
+                        "equation": "a*(b/100)",
+                        "hidden": "",
+                        "id": "deductWithholdingTaxAmount",
+                        "label": "Deduct Withholding Tax Amount",
+                        "numOfDecimal": "2",
+                        "postfix": "",
+                        "prefix": "",
+                        "readonlyLabel": "",
+                        "style": "us",
+                        "useThousandSeparator": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "variables": [
+                            {
+                                "fieldId": "receiptAmountExcludingVat",
+                                "operation": "sum",
+                                "variableName": "a"
+                            },
+                            {
+                                "fieldId": "deductWithholdingTax",
+                                "operation": "sum",
+                                "variableName": "b"
+                            }
+                        ],
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.plugin.enterprise.CalculationField",
+                    "properties": {
+                        "equation": "(a+(a*(7/100)))-b",
+                        "hidden": "",
+                        "id": "totalPayment",
+                        "label": "Total Payment",
+                        "numOfDecimal": "2",
+                        "postfix": "",
+                        "prefix": "",
+                        "readonlyLabel": "",
+                        "style": "us",
+                        "useThousandSeparator": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "variables": [
+                            {
+                                "fieldId": "receiptAmountExcludingVat",
+                                "operation": "sum",
+                                "variableName": "a"
+                            },
+                            {
+                                "fieldId": "deductWithholdingTaxAmount",
+                                "operation": "sum",
+                                "variableName": "b"
+                            }
+                        ],
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.apps.form.lib.SelectBox",
+                    "properties": {
+                        "controlField": "",
+                        "id": "handlingChargeDescription",
+                        "label": "Handling Charge Description (เหตุผลในการขอคืนเงิน/ลดหนี้)",
+                        "multiple": "",
+                        "options": [],
+                        "optionsBinder": {
+                            "className": "org.joget.apps.form.lib.FormOptionsBinder",
+                            "properties": {
+                                "addEmptyOption": "",
+                                "emptyLabel": "",
+                                "extraCondition": "",
+                                "formDefId": "setUpCreditNoteCustomer",
+                                "groupingColumn": "",
+                                "idColumn": "handlingChargeDescription",
+                                "labelColumn": "handlingChargeDescription",
+                                "useAjax": ""
+                            }
+                        },
+                        "readonly": "",
+                        "readonlyLabel": "",
+                        "size": "",
+                        "validator": {
+                            "className": "org.joget.apps.form.lib.DefaultValidator",
+                            "properties": {
+                                "custom-regex": "",
+                                "mandatory": "true",
+                                "message": "",
+                                "type": ""
+                            }
+                        },
+                        "value": "",
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.apps.form.lib.TextField",
+                    "properties": {
+                        "encryption": "",
+                        "id": "creditNoteNo_2",
+                        "label": "Credit Note No.",
+                        "maxlength": "",
+                        "readonly": "",
+                        "readonlyLabel": "",
+                        "size": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "value": "",
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.apps.form.lib.TextField",
+                    "properties": {
+                        "encryption": "",
+                        "id": "invoiceNo_2",
+                        "label": "New Invoice No.",
+                        "maxlength": "",
+                        "readonly": "",
+                        "readonlyLabel": "",
+                        "size": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "value": "",
+                        "workflowVariable": ""
+                    }
+                },
+                {
+                    "className": "org.joget.apps.form.lib.HiddenField",
+                    "properties": {
+                        "id": "parent_id",
+                        "useDefaultWhenEmpty": "",
+                        "value": "",
+                        "workflowVariable": ""
+                    }
+                }
+            ],
+            "properties": {"width": "100%"}
+        }],
+        "properties": {
+            "id": "refundDetails",
+            "label": "Refund Details (รายละเอียดการขอคืนเงิน/ลดหนี้)",
+            "loadBinder": {
+                "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                "properties": {}
+            },
+            "permission": {
+                "className": "",
+                "properties": {}
+            },
+            "regex": "",
+            "storeBinder": {
+                "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                "properties": {}
+            },
+            "visibilityControl": "",
+            "visibilityValue": ""
+        }
+    }],
+    "properties": {
+        "description": "",
+        "id": "customerSection",
+        "loadBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "name": "00_Customer Filing Section",
+        "noPermissionMessage": "",
+        "permission": {
+            "className": "",
+            "properties": {}
+        },
+        "postProcessor": {
+            "className": "",
+            "properties": {}
+        },
+        "postProcessorRunOn": "both",
+        "storeBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "tableName": "CashRefundtest"
+    }
+}

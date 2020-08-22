@@ -1,0 +1,51 @@
+{
+    "actions": [],
+    "binder": {
+        "className": "org.joget.plugin.enterprise.AdvancedFormRowDataListBinder",
+        "properties": {
+            "extraCondition": "",
+            "filters": [],
+            "formDefId": "setUpCreditNoteCustomer"
+        }
+    },
+    "buttonPosition": "bottomLeft",
+    "checkboxPosition": "left",
+    "columns": [
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_0",
+            "label": "Handling Charge Description",
+            "name": "handlingChargeDescription",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        },
+        {
+            "displayLabel": "Date Created",
+            "id": "column_1",
+            "label": "Date Created",
+            "name": "dateCreated"
+        }
+    ],
+    "description": "",
+    "filters": [],
+    "hidePageSize": "",
+    "id": "setUpCreditNoteCustomer",
+    "name": "Set up Handling Charge Description",
+    "order": "",
+    "orderBy": "",
+    "pageSize": "0",
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "rowActions": [],
+    "showPageSizeSelector": "true",
+    "useSession": "false"
+}

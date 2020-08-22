@@ -1,0 +1,74 @@
+{
+    "actions": [],
+    "binder": {
+        "className": "org.joget.plugin.enterprise.AdvancedFormRowDataListBinder",
+        "properties": {
+            "extraCondition": "",
+            "filters": [],
+            "formDefId": "customerSection"
+        }
+    },
+    "buttonPosition": "bottomLeft",
+    "checkboxPosition": "left",
+    "columns": [
+        {
+            "displayLabel": "Date Created",
+            "id": "column_3",
+            "label": "Date Created",
+            "name": "dateCreated"
+        },
+        {
+            "displayLabel": "Invoice No. (เลขที่ใบแจ้งหนี้)",
+            "id": "column_1",
+            "label": "Invoice No. (เลขที่ใบแจ้งหนี้)",
+            "name": "InvoiceNo"
+        },
+        {
+            "displayLabel": "Container No. (หมายเลขตู้)",
+            "id": "column_2",
+            "label": "Container No. (หมายเลขตู้)",
+            "name": "containerNo"
+        },
+        {
+            "displayLabel": "Receipt/Tax Invoice (ใบเสร็จรับเงิน/ใบกำกับภาษี)",
+            "id": "column_8",
+            "label": "Receipt/Tax Invoice (ใบเสร็จรับเงิน/ใบกำกับภาษี)",
+            "name": "ReceiptTaxInvoice"
+        },
+        {
+            "displayLabel": "Handling Charge Description (เหตุผลในการขอคืนเงิน/ลดหนี้)",
+            "id": "column_4",
+            "label": "Handling Charge Description (เหตุผลในการขอคืนเงิน/ลดหนี้)",
+            "name": "handlingChargeDescription"
+        },
+        {
+            "displayLabel": "Receipt Amount (Excluding VAT)",
+            "id": "column_5",
+            "label": "Receipt Amount (Excluding VAT)",
+            "name": "receiptAmountExcludingVat"
+        },
+        {
+            "displayLabel": "Deduct Withholding Tax",
+            "id": "column_6",
+            "label": "Deduct Withholding Tax",
+            "name": "deductWithholdingTax"
+        },
+        {
+            "displayLabel": "Net Refund",
+            "id": "column_7",
+            "label": "Net Refund",
+            "name": "netRefund_1"
+        }
+    ],
+    "description": "",
+    "filters": [],
+    "id": "testDatalistFromAdvanceGrid",
+    "name": "test Datalist from Advance Grid",
+    "order": "",
+    "orderBy": "",
+    "pageSize": "0",
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "rowActions": [],
+    "showPageSizeSelector": "true",
+    "useSession": "false"
+}

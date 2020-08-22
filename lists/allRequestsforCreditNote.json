@@ -1,0 +1,296 @@
+{
+    "actions": [],
+    "binder": {
+        "className": "org.joget.plugin.enterprise.AdvancedFormRowDataListBinder",
+        "properties": {
+            "extraCondition": "",
+            "filters": [
+                {
+                    "field": "reason",
+                    "join": "OR",
+                    "operator": "=",
+                    "value": "Cancel Booking"
+                },
+                {
+                    "field": "reason",
+                    "join": "OR",
+                    "operator": "=",
+                    "value": "Discount"
+                },
+                {
+                    "field": "reason",
+                    "join": "OR",
+                    "operator": "=",
+                    "value": "Double Paid"
+                },
+                {
+                    "field": "reason",
+                    "join": "OR",
+                    "operator": "=",
+                    "value": "Credit"
+                }
+            ],
+            "formDefId": "crmManagerApproval"
+        }
+    },
+    "buttonPosition": "bottomLeft",
+    "checkboxPosition": "left",
+    "columns": [
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_5",
+            "label": "Request Date",
+            "name": "field3",
+            "sortable": "true",
+            "style": "",
+            "width": ""
+        },
+        {
+            "displayLabel": "Request No.",
+            "id": "column_7",
+            "label": "Request No.",
+            "name": "field5"
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_1",
+            "label": "Consignee Name",
+            "name": "consigneeName",
+            "sortable": "true",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "org.joget.apps.datalist.lib.DefaultFormatter",
+                "properties": {
+                    "color": "",
+                    "field": "taxId",
+                    "formDefId": "uploadCustomer",
+                    "formatting": "",
+                    "size": ""
+                }
+            },
+            "hidden": "false",
+            "id": "column_3",
+            "label": "Tax ID",
+            "name": "taxId",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_8",
+            "label": "Company",
+            "name": "field20",
+            "sortable": "true",
+            "style": "",
+            "width": ""
+        },
+        {
+            "displayLabel": "Handling Charge Description",
+            "id": "column_10",
+            "label": "Handling Charge Description",
+            "name": "handlingChargeDescription"
+        },
+        {
+            "displayLabel": "Total Net Refund Amount",
+            "id": "column_9",
+            "label": "Total Net Refund Amount",
+            "name": "totalNetRefundAmount"
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "org.joget.plugin.enterprise.OptionsValueFormatter",
+                "properties": {
+                    "options": [
+                        {
+                            "label": "<font style=\"background-color:green;color:white;\">&nbsp;1. CRM Checker Approved&nbsp;<\/font>",
+                            "value": "Approved by CRM Checker"
+                        },
+                        {
+                            "label": "<font style=\"background-color:red;color:white;\">&nbsp;1. CRM Checker Rejected&nbsp;<\/font>",
+                            "value": "Rejected by CRM Checker"
+                        },
+                        {
+                            "label": "<font style=\"background-color:orange;color:white;\">&nbsp;1. Clarification Required by CRM Checker&nbsp;<\/font>",
+                            "value": "Clarification Required by CRM Checker"
+                        },
+                        {
+                            "label": "<font style=\"background-color:green;color:white;\">&nbsp;2. CRM Manager Approved&nbsp;<\/font>",
+                            "value": "Approved by CRM Manager"
+                        },
+                        {
+                            "label": "<font style=\"background-color:red;color:white;\">&nbsp;2. CRM Manager Rejected&nbsp;<\/font>",
+                            "value": "Rejected by CRM Manager"
+                        },
+                        {
+                            "label": "<font style=\"background-color:orange;color:white;\">&nbsp;2. Clarification Required by CRM Manager&nbsp;<\/font>",
+                            "value": "Clarification Required by CRM Manager"
+                        },
+                        {
+                            "label": "<font style=\"background-color:green;color:white;\">&nbsp;3.1 Credit Note Executor Approved&nbsp;<\/font>",
+                            "value": "Approved by Credit Note Executor"
+                        },
+                        {
+                            "label": "<font style=\"background-color:red;color:white;\">&nbsp;3.1 Credit Note Executor Rejected&nbsp;<\/font>",
+                            "value": "Rejected by Credit Note Executor"
+                        },
+                        {
+                            "label": "<font style=\"background-color:orange;color:white;\">&nbsp;3.1 Clarification Required by Credit Note Executor&nbsp;<\/font>",
+                            "value": "Clarification Required by Credit Note Executor"
+                        },
+                        {
+                            "label": "<font style=\"background-color:green;color:white;\">&nbsp;3.2 Over Payment Executor Approved&nbsp;<\/font>",
+                            "value": "Approved by Over Payment Executor"
+                        },
+                        {
+                            "label": "<font style=\"background-color:orange;color:white;\">&nbsp;3.2 Clarification Required by Over Payment Executor&nbsp;<\/font>",
+                            "value": "Clarification Required by Over Payment Executor"
+                        },
+                        {
+                            "label": "<font style=\"background-color:green;color:white;\">&nbsp;4. FA Approved&nbsp;<\/font>",
+                            "value": "Approved by FA"
+                        },
+                        {
+                            "label": "<font style=\"background-color:red;color:white;\">&nbsp;4. FA Rejected&nbsp;<\/font>",
+                            "value": "Rejected by FA"
+                        },
+                        {
+                            "label": "<font style=\"background-color:orange;color:white;\">&nbsp;4. Clarification Required by FA&nbsp;<\/font>",
+                            "value": "Clarification Required by FA"
+                        },
+                        {
+                            "label": "<font style=\"background-color:yellow;color:ฺblack;\">&nbsp;00. Pending&nbsp;<\/font>",
+                            "value": "Pending"
+                        }
+                    ],
+                    "optionsBinder": {
+                        "className": "",
+                        "properties": {}
+                    }
+                }
+            },
+            "hidden": "false",
+            "id": "column_0",
+            "label": "Approve Status",
+            "name": "Status",
+            "sortable": "true",
+            "style": "",
+            "width": ""
+        }
+    ],
+    "description": "",
+    "filters": [
+        {
+            "filterParamName": "d-1318349-fn_dateCreated",
+            "id": "filter_0",
+            "label": "Date Created",
+            "name": "dateCreated",
+            "type": {
+                "className": "org.joget.plugin.enterprise.DateRangeDataListFilterType",
+                "properties": {
+                    "format": "yy-mm-dd",
+                    "formatJava": "yyyy-MM-dd",
+                    "fromDefaultValue": "",
+                    "fromLabel": "From",
+                    "showFieldLabel": "true",
+                    "toDefaultValue": "",
+                    "toLabel": "To",
+                    "yearRange": "c-10:c+10"
+                }
+            }
+        },
+        {
+            "id": "filter_1",
+            "label": "Consignee Name (ชื่อบริษัทผู้ขอ) ภาษาอังกฤษเท่านั้น",
+            "name": "consigneeName"
+        },
+        {
+            "id": "filter_4",
+            "label": "Tax ID (เลขประจำตัวผู้เสียภาษี)",
+            "name": "taxId"
+        },
+        {
+            "id": "filter_3",
+            "label": "Approve Status",
+            "name": "Status"
+        },
+        {
+            "filterParamName": "d-7040959-fn_field20",
+            "id": "filter_2",
+            "label": "Company (บริษัท)",
+            "name": "field20",
+            "type": {
+                "className": "org.joget.plugin.enterprise.SelectBoxDataListFilterType",
+                "properties": {
+                    "defaultValue": "",
+                    "multiple": "",
+                    "options": [
+                        {
+                            "label": "LCB1",
+                            "value": "LCB1"
+                        },
+                        {
+                            "label": "LCMT",
+                            "value": "LCMT"
+                        }
+                    ],
+                    "optionsBinder": {
+                        "className": "",
+                        "properties": {}
+                    },
+                    "size": ""
+                }
+            }
+        }
+    ],
+    "hidePageSize": "true",
+    "id": "allRequestsforCreditNote",
+    "name": "All Requests for Credit Note",
+    "order": "1",
+    "orderBy": "dateCreated",
+    "pageSize": "100",
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "rowActions": [],
+    "showPageSizeSelector": "true",
+    "useSession": "false"
+}

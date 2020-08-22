@@ -1,0 +1,389 @@
+{
+    "actions": [],
+    "binder": {
+        "className": "org.joget.plugin.enterprise.JdbcDataListBinder",
+        "properties": {
+            "jdbcDatasource": "default",
+            "optimisePaging": "",
+            "primaryKey": "id",
+            "sql": "SELECT cf.id,\r\ncf.dateCreated,\r\ncf.c_consigneeName,\r\ncf.c_taxId,\r\ncf.c_field5,\r\ncf.c_field3,\r\ncf.c_field20,\r\ncf.c_reason,\r\ncf.c_paymentMethod,\r\ncf.c_bank,\r\ncf.c_chequeNumber,\r\ncf.c_paidAmount,\r\ncf.c_total_1_1,\r\ncf.c_totalNetRefundAmount,\r\ncf.c_companyBankAccount,\r\ncf.c_receipientName,\r\ncf.c_receipientid,\r\ncf.c_receipientid_1,\r\ncf.c_contactPersonName,\r\ncf.c_contactPersonTel,\r\ncf.c_contactPersonEmail,\r\ncf.c_handlingChargeDescription,\r\ncf.c_cashRefundType,\r\ncf.c_Status,\r\ncft.c_ReceiptTaxInvoice,\r\ncft.c_containerNo,\r\ncft.c_invoiceNo,\r\ncft.c_receiptAmountExcludingVat,\r\ncft.c_deductWithholdingTax,\r\ncft.c_deductWithholdingTaxAmount,\r\ncft.c_totalPayment,\r\ncft.c_creditNoteNo_2,\r\ncft.c_containerSize,\r\ncft.c_invoiceNo_2\r\nFROM app_fd_cashrefund cf \r\nleft join app_fd_cashrefundtest cft on cf.id=cft.c_parent_id"
+        }
+    },
+    "buttonPosition": "bottomLeft",
+    "checkboxPosition": "left",
+    "columns": [
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_14",
+            "label": "Request Date",
+            "name": "c_field3",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_11",
+            "label": "Refund Type",
+            "name": "c_cashRefundType",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_6",
+            "label": "Request No.",
+            "name": "c_field5",
+            "sortable": "true",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_8",
+            "label": "Company",
+            "name": "c_field20",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_4",
+            "label": "Consignee Name",
+            "name": "c_consigneeName",
+            "sortable": "true",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_5",
+            "label": "Handling Charge Description",
+            "name": "c_handlingChargeDescription",
+            "sortable": "true",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_10",
+            "label": "Receipt/Tax Invoice",
+            "name": "c_ReceiptTaxInvoice",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_1",
+            "label": "Invoice No.",
+            "name": "c_invoiceNo",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_0",
+            "label": "Container No.",
+            "name": "c_containerNo",
+            "sortable": "true",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_7",
+            "label": "Container Size",
+            "name": "c_containerSize",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_12",
+            "label": "Total Payment",
+            "name": "c_totalPayment",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_3",
+            "label": "Credit Note No.",
+            "name": "c_creditNoteNo_2",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        },
+        {
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "exclude_export": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "hidden": "false",
+            "id": "column_9",
+            "label": "Status",
+            "name": "c_Status",
+            "sortable": "false",
+            "style": "",
+            "width": ""
+        }
+    ],
+    "considerFilterWhenGetTotal": "",
+    "description": "Test",
+    "filters": [
+        {
+            "filterParamName": "d-48073-fn_c_field20",
+            "id": "filter_7",
+            "label": "Company",
+            "name": "c_field20",
+            "type": {
+                "className": "org.joget.plugin.enterprise.SelectBoxDataListFilterType",
+                "properties": {
+                    "defaultValue": "",
+                    "multiple": "",
+                    "options": [
+                        {
+                            "label": "LCB1",
+                            "value": "LCB1"
+                        },
+                        {
+                            "label": "LCMT",
+                            "value": "LCMT"
+                        }
+                    ],
+                    "optionsBinder": {
+                        "className": "",
+                        "properties": {}
+                    },
+                    "size": ""
+                }
+            }
+        },
+        {
+            "filterParamName": "d-48073-fn_c_cashRefundType",
+            "id": "filter_4",
+            "label": "Refund Type",
+            "name": "c_cashRefundType",
+            "type": {
+                "className": "org.joget.plugin.enterprise.SelectBoxDataListFilterType",
+                "properties": {
+                    "defaultValue": "",
+                    "multiple": "",
+                    "options": [
+                        {
+                            "label": "Credit Note",
+                            "value": "Credit Note"
+                        },
+                        {
+                            "label": "Over Payment",
+                            "value": "Over Payment"
+                        }
+                    ],
+                    "optionsBinder": {
+                        "className": "",
+                        "properties": {}
+                    },
+                    "size": ""
+                }
+            }
+        },
+        {
+            "filterParamName": "d-48073-fn_c_consigneeName",
+            "id": "filter_6",
+            "label": "Consignee Name",
+            "name": "c_consigneeName",
+            "type": {
+                "className": "org.joget.apps.datalist.lib.TextFieldDataListFilterType",
+                "properties": {"defaultValue": ""}
+            }
+        },
+        {
+            "filterParamName": "d-48073-fn_c_ReceiptTaxInvoice",
+            "id": "filter_0",
+            "label": "Receipt/Tax Invoice",
+            "name": "c_ReceiptTaxInvoice",
+            "type": {
+                "className": "org.joget.apps.datalist.lib.TextFieldDataListFilterType",
+                "properties": {"defaultValue": ""}
+            }
+        },
+        {
+            "filterParamName": "d-48073-fn_c_invoiceNo",
+            "id": "filter_2",
+            "label": "Invoice No.",
+            "name": "c_invoiceNo",
+            "type": {
+                "className": "org.joget.apps.datalist.lib.TextFieldDataListFilterType",
+                "properties": {"defaultValue": ""}
+            }
+        },
+        {
+            "filterParamName": "d-48073-fn_c_containerNo",
+            "id": "filter_1",
+            "label": "Container No",
+            "name": "c_containerNo",
+            "type": {
+                "className": "org.joget.apps.datalist.lib.TextFieldDataListFilterType",
+                "properties": {"defaultValue": ""}
+            }
+        },
+        {
+            "filterParamName": "d-48073-fn_c_creditNoteNo_2",
+            "id": "filter_3",
+            "label": "Credit Note No.",
+            "name": "c_creditNoteNo_2",
+            "type": {
+                "className": "org.joget.apps.datalist.lib.TextFieldDataListFilterType",
+                "properties": {"defaultValue": ""}
+            }
+        },
+        {
+            "filterParamName": "d-48073-fn_dateCreated",
+            "id": "filter_5",
+            "label": "Date Created",
+            "name": "dateCreated",
+            "type": {
+                "className": "org.joget.plugin.enterprise.DateRangeDataListFilterType",
+                "properties": {
+                    "format": "mm/dd/yy",
+                    "formatJava": "MM/dd/yyyy",
+                    "fromDefaultValue": "",
+                    "fromLabel": "From",
+                    "showFieldLabel": "true",
+                    "toDefaultValue": "",
+                    "toLabel": "To",
+                    "yearRange": "c-10:c+10"
+                }
+            }
+        }
+    ],
+    "hidePageSize": "true",
+    "id": "JDBC",
+    "name": "Test JDBC Datalist",
+    "order": "1",
+    "orderBy": "c_field3",
+    "pageSize": "0",
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "rowActions": [],
+    "showPageSizeSelector": "true",
+    "useSession": "false"
+}
