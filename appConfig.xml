@@ -56,31 +56,26 @@
          <id>smtp_from</id>
          <appId>002</appId>
          <appVersion>1</appVersion>
-         <value></value>
       </environmentVariable>
       <environmentVariable>
          <id>smtp_host</id>
          <appId>002</appId>
          <appVersion>1</appVersion>
-         <value></value>
       </environmentVariable>
       <environmentVariable>
          <id>smtp_password</id>
          <appId>002</appId>
          <appVersion>1</appVersion>
-         <value></value>
       </environmentVariable>
       <environmentVariable>
          <id>smtp_port</id>
          <appId>002</appId>
          <appVersion>1</appVersion>
-         <value></value>
       </environmentVariable>
       <environmentVariable>
          <id>smtp_username</id>
          <appId>002</appId>
          <appVersion>1</appVersion>
-         <value></value>
       </environmentVariable>
    </environmentVariableList>
    <messageList/>
